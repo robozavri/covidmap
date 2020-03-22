@@ -108,7 +108,7 @@
     </head>
     <body style="background-color: cadetblue">
     <nav class="navbar navbar-expand-lg navbar-light bavbatBgColor">
-        <a class="logo colorGray" href="#">Covid Map</a>
+        <span class="logo colorGray">Covid Map</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -171,7 +171,7 @@
             .reportBtn {
                 font-size: 20px;
                 font-weight: 600;
-                margin-right: 100px;
+                /*margin-right: 100px;*/
                 color: #ffffff;
                 background-color: #e94e5d;
                 border-color: #e94e5d;
