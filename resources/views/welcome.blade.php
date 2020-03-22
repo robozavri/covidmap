@@ -283,6 +283,7 @@
 
             if(!marker){
                 alert('choose point on map');
+                return;
             }
 
             var actionurl = event.currentTarget.action;
