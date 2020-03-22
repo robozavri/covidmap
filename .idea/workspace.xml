@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aedf38dd-ed71-4fc8-af19-74e82914dd80" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="aedf38dd-ed71-4fc8-af19-74e82914dd80" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,11 +153,7 @@
       <updated>1584822386794</updated>
       <workItem from="1584822389219" duration="8105000" />
       <workItem from="1584866174045" duration="23685000" />
-<<<<<<< HEAD
-      <workItem from="1584909243373" duration="469000" />
-=======
-      <workItem from="1584909243373" duration="1085000" />
->>>>>>> a9d0b8cd1f165597521b5b8b2fbc3eedca0ff516
+      <workItem from="1584909243373" duration="1576000" />
     </task>
     <servers />
   </component>

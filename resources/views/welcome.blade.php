@@ -173,8 +173,8 @@
                 font-weight: 600;
                 margin-right: 100px;
                 color: #ffffff;
-                background-color: #e94e5d;
-                border-color: #e94e5d;
+                background-color: #FF7777;
+                border-color: #FF7777;
                 padding: 0px 20px 0px 20px;
             }
             .logo {
