@@ -44,12 +44,11 @@
                             title: item.emergency
                         });
                         itemMarker.addListener('click', function() {
-                            console.log(item)
+                            // console.log(item)
                             $('#reportId').text(item.emergency);
                             $('#peopleId').text(item.people);
                             $('#descriptionId').text(item.description);
                             $('#addressId').text(item.address);
-
                         });
                         markersArr.push(itemMarker);
                     });
@@ -282,9 +281,9 @@
         $( "#reportForm" ).submit(function( event ) {
             event.preventDefault();
 
-            // if(!marker){
-            //     alert('choose point on map');
-            // }
+            if(!marker){
+                alert('choose point on map');
+            }
 
             var actionurl = event.currentTarget.action;
 

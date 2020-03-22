@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aedf38dd-ed71-4fc8-af19-74e82914dd80" name="Default Changelist" comment="" />
+    <list default="true" id="aedf38dd-ed71-4fc8-af19-74e82914dd80" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +15,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -103,6 +109,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ZSAztEsR4y76OZIt8h1YAsuIpd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -148,7 +155,8 @@
       <option name="presentableId" value="Default" />
       <updated>1584822386794</updated>
       <workItem from="1584822389219" duration="8105000" />
-      <workItem from="1584866174045" duration="22901000" />
+      <workItem from="1584866174045" duration="23685000" />
+      <workItem from="1584909243373" duration="45000" />
     </task>
     <servers />
   </component>
@@ -156,9 +164,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="495" y="255" key="com.intellij.ide.util.TipDialog" timestamp="1584866264115">
+    <state x="495" y="255" key="com.intellij.ide.util.TipDialog" timestamp="1584909245545">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="495" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584866264115" />
+    <state x="495" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584909245545" />
   </component>
 </project>
