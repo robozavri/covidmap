@@ -108,14 +108,14 @@
     </head>
     <body style="background-color: cadetblue">
     <nav class="navbar navbar-expand-lg navbar-light bavbatBgColor">
-        <span class="logo colorGray">Covid Map</span>
+        <span class="logo">Covid Map</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav colorGray mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Map <span class="sr-only">(current)</span></a>
+                    <a class="nav-link active-link" href="#">Map <span class="sr-only">(current)</span></a>
                 </li>
 {{--                <li class="nav-item">--}}
 {{--                    <a class="nav-link" href="#">More official informacion</a>--}}
@@ -160,6 +160,9 @@
         </div>
 
         <style>
+            .active-link {
+                text-decoration: underline;
+            }
             .arrowRight {
                 display: inline-block;
                 float: right;
@@ -184,7 +187,8 @@
                 margin-right: 1rem;
                 font-size: 1.25rem;
                 line-height: inherit;
-                white-space: nowrap;
+                white-space: nowrap
+                color: #575757;
             }
             .colorGray {
                 color: #999999;
