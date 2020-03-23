@@ -161,7 +161,7 @@
                     <a class="nav-link active-link" href="#">Map <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="/hot-line" class="borderRadius20 hotlineBtn">Hot line</a>
+                    <a href="/hot-line" class="nav-link">Hot line</a>
                 </li>
               {{--  <li class="nav-item">
                     <a class="nav-link" href="#">More official informacion</a>
