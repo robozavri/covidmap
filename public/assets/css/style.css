@@ -1,0 +1,156 @@
+.navbarStyles {
+    height: 65px;
+    z-index: 999;
+}
+.shadowBottom {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=45, Color=#C2C2C2)";/*IE 8*/
+    -moz-box-shadow: -1px 1px 2px 1px rgba(194,194,194,0.6);/*FF 3.5+*/
+    -webkit-box-shadow: -1px 1px 2px 1px rgba(194,194,194,0.6);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    box-shadow: -1px 1px 2px 1px rgba(194,194,194,0.6);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color=#C2C2C2); /*IE 5.5-7*/
+}
+.active-link {
+    text-decoration: underline;
+}
+.arrowRight {
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+}
+.arrowRightReport {
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+}
+.bavbatBgColor {
+    background-color: white;
+}
+
+.hotlineBtn{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    /*margin-right: 100px;*/
+    color: #ffffff;
+    background-color: #FF7777;
+    border-color: #FF7777;
+    padding: 0px 20px 0px 20px;
+    height: 36px;
+    text-decoration: none;
+}
+.hotlineBtn:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+.reportBtn {
+    font-size: 20px;
+    font-weight: 600;
+    /*margin-right: 100px;*/
+    color: #ffffff;
+    background-color: #FF7777;
+    border-color: #FF7777;
+    padding: 0px 20px 0px 20px;
+    height: 36px;
+    width: 115px;
+}
+.logo {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    color: #575757;
+}
+.colorGray {
+    color: #999999;
+}
+.btn-send {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #FF7777;
+    border-color: #FF7777;
+    padding: 0px 20px 0px 20px;
+    height: 36px;
+    width: 115px;
+}
+.borderRadius20{
+    border-radius: 20px;
+}
+.cardTitle {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #999999;
+}
+.form {
+    border-radius: 20px;
+    padding: 40px;
+}
+#over_map {
+    border-radius: 20px 0 0 20px;
+    right: -640px;
+    /*right: 10px;*/
+    position: absolute;
+    top: 130px;
+    z-index: 99;
+    /*height: 70%;*/
+    width: 40%;
+    background-color: #ffffff;
+    /*background-color: #ffc37c;*/
+}
+#over_mapReport {
+    border-radius: 20px 0 0 20px;
+    right: -640px;
+    padding: 20px;
+    position: absolute;
+    top: 130px;
+    z-index: 92;
+    /*height: 70%;*/
+    width: 39%;
+    background-color: #ffffff;
+    /*background-color: #ffc37c;*/
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /*max-width: 100%;*/
+    overflow-x: hidden;
+}
+#map {
+    height: 99%;
+    /*width: 99%;*/
+}
+#panel {
+    position: absolute;
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+}
+
+
+#panel, .panel {
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+#panel select, #panel input, .panel select, .panel input {
+    font-size: 15px;
+}
+
+#panel select, .panel select {
+    width: 100%;
+}
+
+#panel i, .panel i {
+    font-size: 12px;
+}

@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'WelcomeController@index');
+Route::get('/hot-line',function(){
+    return View('hot-line');
+});
 
 Route::post('/report', 'ReportController@saveReport');
 Route::get('/report', 'ReportController@get');

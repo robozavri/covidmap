@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 {{--        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>--}}
 {{--        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" >--}}
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" >
 
 
         <script>
@@ -25,20 +26,60 @@
             let reports;
             let icon = '{{ asset("assets/Pin2.svg") }}';
 
+        async function getPoints(){
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            $.ajax({
+            const result = $.ajax({
                 url: '{{ env('APP_URL') }}/report',
                 type: 'get',
                 success: function(data) {
+                    // let markersArr = [];
+                    // let itemMarker
+                    // reports = JSON.parse(data);
+                    // reports.map(function(item){
+                    //     itemMarker = new google.maps.Marker({
+                    //         position: new google.maps.LatLng(item.lat,item.lng),
+                    //         map: map,
+                    //         icon: icon
+                    //     });
+                    //     itemMarker.addListener('click', function() {
+                    //         // console.log(item)
+                    //         $('#reportId').text(item.emergency);
+                    //         $('#peopleId').text(item.people);
+                    //         $('#descriptionId').text(item.description);
+                    //         $('#addressId').text(item.address);
+                    //
+                    //         $("#over_mapReport").animate({
+                    //             marginRight: "630px"
+                    //         },500);
+                    //
+                    //     });
+                    //     markersArr.push(itemMarker);
+                    // });
+                    return data;
+                }
+            });
+            return result;
+        }
+            function initMap(listener) {
+                // tbilisi coordinate
+                let lat_lng = {lat: 41.728280, lng: 44.779342};
+                map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 12,
+                    center: lat_lng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+
+                getPoints().then( (data) => {
+
                     let markersArr = [];
                     let itemMarker
                     reports = JSON.parse(data);
                     reports.map(function(item){
-                        // console.log('report item: ',item);
                         itemMarker = new google.maps.Marker({
                             position: new google.maps.LatLng(item.lat,item.lng),
                             map: map,
@@ -58,19 +99,9 @@
                         });
                         markersArr.push(itemMarker);
                     });
-                        // console.log('reports: ',reports);
-                        // console.log('reports: ',data);
+                    // console.log('getPoints async',data);
                 }
-            });
-
-            function initMap(listener) {
-                // tbilisi coordinate
-                let lat_lng = {lat: 41.728280, lng: 44.779342};
-                map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 12,
-                    center: lat_lng,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                });
+            );
 
                 // This event listener will call addMarker() when the map is clicked.
                 map.addListener('click', function (event) {
@@ -127,9 +158,12 @@
                 <li class="nav-item">
                     <a class="nav-link active-link" href="#">Map <span class="sr-only">(current)</span></a>
                 </li>
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="#">More official informacion</a>--}}
-{{--                </li>--}}
+                <li class="nav-item">
+                    <a href="/hot-line" class="borderRadius20 hotlineBtn">Hot line</a>
+                </li>
+              {{--  <li class="nav-item">
+                    <a class="nav-link" href="#">More official informacion</a>
+                </li> --}}
             </ul>
             <ul class=" navbar-nav">
                 <li class="nav-item">
@@ -175,148 +209,7 @@
                 <p><b>Descripion: </b><span id="descriptionId"></span></p>
         </div>
 
-        <style>
-            .navbarStyles {
-                height: 65px;
-                z-index: 999;
-            }
-            .shadowBottom {
-                -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=45, Color=#C2C2C2)";/*IE 8*/
-                -moz-box-shadow: -1px 1px 2px 1px rgba(194,194,194,0.6);/*FF 3.5+*/
-                -webkit-box-shadow: -1px 1px 2px 1px rgba(194,194,194,0.6);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
-                box-shadow: -1px 1px 2px 1px rgba(194,194,194,0.6);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
-                filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color=#C2C2C2); /*IE 5.5-7*/
-            }
-            .active-link {
-                text-decoration: underline;
-            }
-            .arrowRight {
-                display: inline-block;
-                float: right;
-                cursor: pointer;
-            }
-            .arrowRightReport {
-                display: inline-block;
-                float: right;
-                cursor: pointer;
-            }
-            .bavbatBgColor {
-                background-color: white;
-            }
-            .reportBtn {
-                font-size: 20px;
-                font-weight: 600;
-                /*margin-right: 100px;*/
-                color: #ffffff;
-                background-color: #FF7777;
-                border-color: #FF7777;
-                padding: 0px 20px 0px 20px;
-                height: 36px;
-                width: 115px;
-            }
-            .logo {
-                display: inline-block;
-                padding-top: .3125rem;
-                padding-bottom: .3125rem;
-                margin-right: 1rem;
-                font-size: 1.25rem;
-                line-height: inherit;
-                white-space: nowrap;
-                color: #575757;
-            }
-            .colorGray {
-                color: #999999;
-            }
-            .btn-send {
-                font-size: 20px;
-                font-weight: 600;
-                color: #ffffff;
-                background-color: #FF7777;
-                border-color: #FF7777;
-                padding: 0px 20px 0px 20px;
-                height: 36px;
-                width: 115px;
-            }
-            .borderRadius20{
-                border-radius: 20px;
-            }
-            .cardTitle {
-               padding-bottom: 1rem;
-                margin-bottom: 1rem;
-                border-bottom: 1px solid #999999;
-            }
-            .form {
-                border-radius: 20px;
-                padding: 40px;
-            }
-            #over_map {
-                border-radius: 20px 0 0 20px;
-                right: -640px;
-                /*right: 10px;*/
-                position: absolute;
-                top: 130px;
-                z-index: 99;
-                /*height: 70%;*/
-                width: 40%;
-                background-color: #ffffff;
-                /*background-color: #ffc37c;*/
-            }
-            #over_mapReport {
-                border-radius: 20px 0 0 20px;
-                right: -640px;
-                padding: 20px;
-                position: absolute;
-                top: 130px;
-                z-index: 92;
-                /*height: 70%;*/
-                width: 39%;
-                background-color: #ffffff;
-                /*background-color: #ffc37c;*/
-            }
 
-
-            html, body {
-                height: 100%;
-                margin: 0;
-                padding: 0;
-                /*max-width: 100%;*/
-                overflow-x: hidden;
-            }
-            #map {
-                height: 99%;
-                /*width: 99%;*/
-            }
-            #panel {
-                position: absolute;
-                top: 10px;
-                left: 25%;
-                z-index: 5;
-                background-color: #fff;
-                padding: 5px;
-                border: 1px solid #999;
-                text-align: center;
-            }
-
-
-            #panel, .panel {
-                font-family: 'Roboto','sans-serif';
-                line-height: 30px;
-                padding-left: 10px;
-            }
-
-            #panel select, #panel input, .panel select, .panel input {
-                font-size: 15px;
-            }
-
-            #panel select, .panel select {
-                width: 100%;
-            }
-
-            #panel i, .panel i {
-                font-size: 12px;
-            }
-
-        </style>
     <script>
 
 
