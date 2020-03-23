@@ -174,7 +174,7 @@
         <style>
             .navbarStyles {
                 height: 65px;
-
+                z-index: 999;
             }
             .shadowBottom {
                 -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=45, Color=#C2C2C2)";/*IE 8*/
