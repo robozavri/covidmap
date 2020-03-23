@@ -16,7 +16,7 @@
 
 
         <script>
-
+            let tabIsVisible = false;
             let map;
             let marker;
             let Markerlocation;
@@ -73,8 +73,10 @@
 
                 // This event listener will call addMarker() when the map is clicked.
                 map.addListener('click', function (event) {
-                    placeMarker(event.latLng);
-
+                    if(tabIsVisible)
+                    {
+                        placeMarker(event.latLng);
+                    }
                     // if(mapIsInit)
                     // addMarker(event.latLng);
                     // mapIsInit = false;
@@ -286,6 +288,7 @@
         </style>
     <script>
 
+
         $( "#reportForm" ).submit(function( event ) {
             event.preventDefault();
 
@@ -324,12 +327,14 @@
         });
 
         $( '.reportBtn' ).click(function() {
+            tabIsVisible = true;
             $("#over_map").animate({
                 marginRight: "630px"
             },500);
         });
 
         $( '.arrowRight' ).click(function() {
+            tabIsVisible = false;
             $("#over_map").animate({
                 marginRight: "0px"
             },500);
