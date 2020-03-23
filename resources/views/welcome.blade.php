@@ -329,11 +329,24 @@
                 dataType: 'application/json',
                 data: formData,
                 success: function(data) {
-                    // console.log('server',data);
+                    console.log('server',data);
                     tabIsVisible = false;
-                    $("#over_map").hide('slow', function(){ $target.remove(); });
                 }
             });
+
+            alert('sent')
+
+            $("[name=emergency]").val('');
+            $("[name=address]").val('');
+            $("[name=people]").val('');
+            $("[name=description]").val('');
+            // $("#over_map").hide('slow');
+            // $("#over_map").remove();
+            tabIsVisible = false;
+            $("#over_map").animate({
+                marginRight: "0px"
+            },500);
+
         });
 
         $( '.reportBtn' ).click(function() {
