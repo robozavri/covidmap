@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="domain" content="{{ env('APP_URL')  }}">
         <title>Covid Map</title>
 
         <!-- Fonts -->
@@ -15,7 +16,7 @@
 {{--        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" >--}}
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" >
 
-
+{{--
         <script>
             let tabIsVisible = false;
             let map;
@@ -146,6 +147,7 @@
             // });
 
         </script>
+        --}}
     </head>
     <body style="background-color: #ffffff">
     <nav class="navbar navbar-expand-lg navbar-light bavbatBgColor shadowBottom navbarStyles">
@@ -210,84 +212,7 @@
         </div>
 
 
-    <script>
-
-
-        $( "#reportForm" ).submit(function( event ) {
-            event.preventDefault();
-
-            if(!marker){
-                alert('choose point on map');
-                return;
-            }
-
-            var actionurl = event.currentTarget.action;
-
-            let formData = {};
-
-            formData.emergency = $("[name=emergency]").val();
-            formData.address = $("[name=address]").val();
-            formData.people = $("[name=people]").val();
-            formData.description = $("[name=description]").val();
-            // formData.location = { lat : Markerlocation.lat(), lng: Markerlocation.lng()};
-            formData.lat =  Markerlocation.lat();
-            formData.lng =  Markerlocation.lng();
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: actionurl,
-                type: 'post',
-                dataType: 'application/json',
-                data: formData,
-                success: function(data) {
-                    console.log('server',data);
-                    tabIsVisible = false;
-                    location.reload();
-                }
-            });
-
-            // alert('successfully sent')
-
-            $("[name=emergency]").val('');
-            $("[name=address]").val('');
-            $("[name=people]").val('');
-            $("[name=description]").val('');
-            // $("#over_map").hide('slow');
-            // $("#over_map").remove();
-            tabIsVisible = false;
-            $("#over_map").animate({
-                marginRight: "0px"
-            },500);
-            location.reload();
-
-        });
-
-        $( '.reportBtn' ).click(function() {
-            tabIsVisible = true;
-            $("#over_map").animate({
-                marginRight: "630px"
-            },500);
-        });
-
-        $( '.arrowRight' ).click(function() {
-            tabIsVisible = false;
-            $("#over_map").animate({
-                marginRight: "0px"
-            },500);
-        });
-
-        $( '.arrowRightReport' ).click(function() {
-            tabIsVisible = false;
-            $("#over_mapReport").animate({
-                marginRight: "0px"
-            },500);
-        });
-
-    </script>
+    <script src="{{ asset('assets/js/script.js') }}"> </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlrgF8pVRHTF23077VmyciFidkUP4H90k&callback=initMap"></script>
     </body>
 </html>
