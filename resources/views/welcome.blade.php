@@ -164,7 +164,11 @@
             </form>
         </div>
         <div id="over_mapReport" class="shadowBottom">
-                <h2 class="cardTitle">Report</h2>
+                <h2 class="cardTitle">Report
+                    <span class="arrowRightReport">
+                        <i class="far fa-times-circle"></i>
+                    </span>
+                </h2>
                 <p><b>Emergency: </b><span id="reportId"></span></p>
                 <p><b>People: </b><span id="peopleId"></span></p>
                 <p><b>Address: </b><span id="addressId"></span></p>
@@ -187,6 +191,11 @@
                 text-decoration: underline;
             }
             .arrowRight {
+                display: inline-block;
+                float: right;
+                cursor: pointer;
+            }
+            .arrowRightReport {
                 display: inline-block;
                 float: right;
                 cursor: pointer;
@@ -219,12 +228,14 @@
                 color: #999999;
             }
             .btn-send {
+                font-size: 20px;
+                font-weight: 600;
                 color: #ffffff;
-                background-color: #e94e5d;
-                border-color: #e94e5d;
-                padding: 10px 20px 10px 20px;
-                font-size: 15px;
-                font-weight: 900;
+                background-color: #FF7777;
+                border-color: #FF7777;
+                padding: 0px 20px 0px 20px;
+                height: 36px;
+                width: 115px;
             }
             .borderRadius20{
                 border-radius: 20px;
@@ -370,6 +381,13 @@
         $( '.arrowRight' ).click(function() {
             tabIsVisible = false;
             $("#over_map").animate({
+                marginRight: "0px"
+            },500);
+        });
+
+        $( '.arrowRightReport' ).click(function() {
+            tabIsVisible = false;
+            $("#over_mapReport").animate({
                 marginRight: "0px"
             },500);
         });
