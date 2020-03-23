@@ -116,8 +116,8 @@
 
         </script>
     </head>
-    <body style="background-color: cadetblue">
-    <nav class="navbar navbar-expand-lg navbar-light bavbatBgColor shadowBottom">
+    <body style="background-color: #ffffff">
+    <nav class="navbar navbar-expand-lg navbar-light bavbatBgColor shadowBottom navbarStyles">
         <span class="logo">Covid Map</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -172,12 +172,16 @@
         </div>
 
         <style>
+            .navbarStyles {
+                height: 65px;
+
+            }
             .shadowBottom {
-                -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=12, Direction=76, Color=#000000)";/*IE 8*/
-                -moz-box-shadow: -1px 4px 12px -4px rgba(0,0,0,0.6);/*FF 3.5+*/
-                -webkit-box-shadow: -1px 4px 12px -4px rgba(0,0,0,0.6);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
-                box-shadow: -1px 4px 12px -4px rgba(0,0,0,0.6);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
-                filter: progid:DXImageTransform.Microsoft.Shadow(Strength=12, Direction=135, Color=#000000); /*IE 5.5-7*/
+                -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=45, Color=#C2C2C2)";/*IE 8*/
+                -moz-box-shadow: -1px 1px 2px 1px rgba(194,194,194,0.6);/*FF 3.5+*/
+                -webkit-box-shadow: -1px 1px 2px 1px rgba(194,194,194,0.6);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+                box-shadow: -1px 1px 2px 1px rgba(194,194,194,0.6);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+                filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color=#C2C2C2); /*IE 5.5-7*/
             }
             .active-link {
                 text-decoration: underline;
@@ -198,6 +202,8 @@
                 background-color: #FF7777;
                 border-color: #FF7777;
                 padding: 0px 20px 0px 20px;
+                height: 36px;
+                width: 115px;
             }
             .logo {
                 display: inline-block;
@@ -262,6 +268,8 @@
                 height: 100%;
                 margin: 0;
                 padding: 0;
+                /*max-width: 100%;*/
+                overflow-x: hidden;
             }
             #map {
                 height: 99%;
@@ -367,6 +375,6 @@
         });
 
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlrgF8pVRHTF23077VmyciFidkUP4H90k&callback=initMap"></script>
     </body>
 </html>
