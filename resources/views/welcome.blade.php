@@ -334,7 +334,7 @@
                 }
             });
 
-            alert('sent')
+            // alert('successfully sent')
 
             $("[name=emergency]").val('');
             $("[name=address]").val('');
