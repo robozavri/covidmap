@@ -49,6 +49,11 @@
                             $('#peopleId').text(item.people);
                             $('#descriptionId').text(item.description);
                             $('#addressId').text(item.address);
+
+                            $("#over_mapReport").animate({
+                                marginRight: "630px"
+                            },500);
+
                         });
                         markersArr.push(itemMarker);
                     });
@@ -187,7 +192,7 @@
                 margin-right: 1rem;
                 font-size: 1.25rem;
                 line-height: inherit;
-                white-space: nowrap
+                white-space: nowrap;
                 color: #575757;
             }
             .colorGray {
@@ -227,9 +232,8 @@
             }
             #over_mapReport {
                 border-radius: 20px 0 0 20px;
-                right: 0px;
+                right: -640px;
                 padding: 20px;
-                /*right: 10px;*/
                 position: absolute;
                 top: 130px;
                 z-index: 92;
@@ -313,7 +317,7 @@
                 dataType: 'application/json',
                 data: formData,
                 success: function(data) {
-                    console.log('server',data);
+                    // console.log('server',data);
                     $("#over_map").hide('slow', function(){ $target.remove(); });
                 }
             });
