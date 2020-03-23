@@ -106,8 +106,8 @@
                         map: map,
                         icon: icon
                     });
-                    Markerlocation = location;
                 }
+                Markerlocation = location;
             }
 
             // google.maps.event.addListener(map, 'click', function(event) {
@@ -353,6 +353,7 @@
                 success: function(data) {
                     console.log('server',data);
                     tabIsVisible = false;
+                    location.reload();
                 }
             });
 
@@ -368,6 +369,7 @@
             $("#over_map").animate({
                 marginRight: "0px"
             },500);
+            location.reload();
 
         });
 
