@@ -161,7 +161,7 @@
                     <a class="nav-link active-link" href="#">Map <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="/hot-line" class="nav-link">Hot line</a>
+                    <a href="/hot-line" class="nav-link">Contact</a>
                 </li>
               {{--  <li class="nav-item">
                     <a class="nav-link" href="#">More official informacion</a>
@@ -189,7 +189,7 @@
                     <input required type="text" name="address" class="borderRadius20 form-control"  placeholder="what`s the address ?">
                 </div>
                 <div class="form-group">
-                    <input required type="text" class="borderRadius20 form-control" name="people" placeholder="how meny people do you need ?">
+                    <input required type="text" class="borderRadius20 form-control" name="people" placeholder="how many people do you need ?">
                 </div>
                 <div class="form-group">
                     <textarea required class="form-control" name="description" rows="3"  placeholder="describe what do you need"></textarea>
