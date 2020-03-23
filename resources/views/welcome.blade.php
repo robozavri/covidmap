@@ -23,6 +23,7 @@
             let markers = [];
             let mapIsInit = true;
             let reports;
+            let icon = '{{ asset("assets/Pin2.svg") }}';
 
             $.ajaxSetup({
                 headers: {
@@ -41,7 +42,7 @@
                         itemMarker = new google.maps.Marker({
                             position: new google.maps.LatLng(item.lat,item.lng),
                             map: map,
-                            title: item.emergency
+                            icon: icon
                         });
                         itemMarker.addListener('click', function() {
                             // console.log(item)
@@ -90,7 +91,8 @@
             function addMarker(location) {
                 var marker = new google.maps.Marker({
                     position: location,
-                    map: map
+                    map: map,
+                    icon: icon
                 });
                 markers.push(marker);
             }
@@ -101,7 +103,8 @@
                 } else {
                     marker = new google.maps.Marker({
                         position: location,
-                        map: map
+                        map: map,
+                        icon: icon
                     });
                     Markerlocation = location;
                 }
@@ -364,6 +367,6 @@
         });
 
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?&callback=initMap"></script>
     </body>
 </html>
