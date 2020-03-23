@@ -114,7 +114,7 @@
         </script>
     </head>
     <body style="background-color: cadetblue">
-    <nav class="navbar navbar-expand-lg navbar-light bavbatBgColor">
+    <nav class="navbar navbar-expand-lg navbar-light bavbatBgColor shadowBottom">
         <span class="logo">Covid Map</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -137,9 +137,11 @@
     </nav>
 
         <div id="map"></div>
-        <div id="over_map">
+        <div id="over_map" class="shadowBottom">
             <form class="form" id="reportForm" action="/report" method="post">
-                <h2 class="cardTitle">Enter data <span class="arrowRight"><i class="fas fa-arrow-right"></i></span></h2>
+                <h2 class="cardTitle">Enter data <span class="arrowRight">
+                        <i class="far fa-times-circle"></i>
+                    </span></h2>
 
                 <div class="form-group">
                     <input required type="text" name="emergency" class="borderRadius20 form-control" placeholder="what`s the emergency ?">
@@ -158,7 +160,7 @@
                 </div>
             </form>
         </div>
-        <div id="over_mapReport">
+        <div id="over_mapReport" class="shadowBottom">
                 <h2 class="cardTitle">Report</h2>
                 <p><b>Emergency: </b><span id="reportId"></span></p>
                 <p><b>People: </b><span id="peopleId"></span></p>
@@ -167,6 +169,13 @@
         </div>
 
         <style>
+            .shadowBottom {
+                -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=12, Direction=76, Color=#000000)";/*IE 8*/
+                -moz-box-shadow: -1px 4px 12px -4px rgba(0,0,0,0.6);/*FF 3.5+*/
+                -webkit-box-shadow: -1px 4px 12px -4px rgba(0,0,0,0.6);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+                box-shadow: -1px 4px 12px -4px rgba(0,0,0,0.6);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+                filter: progid:DXImageTransform.Microsoft.Shadow(Strength=12, Direction=135, Color=#000000); /*IE 5.5-7*/
+            }
             .active-link {
                 text-decoration: underline;
             }
@@ -321,6 +330,7 @@
                 data: formData,
                 success: function(data) {
                     // console.log('server',data);
+                    tabIsVisible = false;
                     $("#over_map").hide('slow', function(){ $target.remove(); });
                 }
             });
