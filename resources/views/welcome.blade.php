@@ -385,7 +385,7 @@
             $("[name=emergency]").val('');
             $("[name=address]").val('');
             $("[name=phone]").val('');
-            $("[name=description]").val('');
+            $("[name=description]").val('');zzzz
             // $("#over_map").hide('slow');
             // $("#over_map").remove();
             tabIsVisible = false;
