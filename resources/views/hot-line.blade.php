@@ -41,6 +41,6 @@
         </ul>
     </div>
 </nav>
-გვერდი მზადების პროცესშია
+<p style="padding:50px;">giorgi.kakhiani13@gmail.com</p>
 </body>
 </html>
