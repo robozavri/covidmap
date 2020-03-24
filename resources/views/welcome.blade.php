@@ -363,6 +363,10 @@
             formData.lat =  Markerlocation.lat();
             formData.lng =  Markerlocation.lng();
 
+            function serverResppnseData(data)
+            {
+                console.log('serverResppnseData:',data);
+            }
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -374,9 +378,17 @@
                 dataType: 'application/json',
                 data: formData,
                 success: function(data) {
-                    console.log('server',data);
+                    // serverResppnseData(data);
+                    // console.log('server',data);
                     // tabIsVisible = false;
                     // location.reload();
+                    return data;
+                },
+                complete: function (data) {
+                    serverResppnseData(data);
+                    console.log('server',data);
+                    tabIsVisible = false;
+                    location.reload();
                 }
             });
 
