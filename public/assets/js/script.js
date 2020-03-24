@@ -69,7 +69,7 @@ function initMap(listener) {
                 itemMarker.addListener('click', function() {
                     // console.log(item)
                     $('#reportId').text(item.emergency);
-                    $('#peopleId').text(item.people);
+                    $('#phoneId').text(item.phone);
                     $('#descriptionId').text(item.description);
                     $('#addressId').text(item.address);
 
@@ -141,12 +141,12 @@ $( "#reportForm" ).submit(function( event ) {
 
     formData.emergency = $("[name=emergency]").val();
     formData.address = $("[name=address]").val();
-    formData.people = $("[name=people]").val();
+    formData.phone = $("[name=phone]").val();
     formData.description = $("[name=description]").val();
     // formData.location = { lat : Markerlocation.lat(), lng: Markerlocation.lng()};
     formData.lat =  Markerlocation.lat();
     formData.lng =  Markerlocation.lng();
-
+console.log(formData)
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -159,8 +159,8 @@ $( "#reportForm" ).submit(function( event ) {
         data: formData,
         success: function(data) {
             console.log('server',data);
-            tabIsVisible = false;
-            location.reload();
+            // tabIsVisible = false;
+            // location.reload();
         }
     });
 
@@ -168,7 +168,7 @@ $( "#reportForm" ).submit(function( event ) {
 
     $("[name=emergency]").val('');
     $("[name=address]").val('');
-    $("[name=people]").val('');
+    $("[name=phone]").val('');
     $("[name=description]").val('');
     // $("#over_map").hide('slow');
     // $("#over_map").remove();

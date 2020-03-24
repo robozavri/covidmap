@@ -13,6 +13,7 @@ class Report extends Model
         'emergency',
         'address',
         'people',
+        'phone',
         'description',
         'lat',
         'lng',

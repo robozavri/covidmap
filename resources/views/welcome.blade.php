@@ -189,7 +189,7 @@
                     <input required type="text" name="address" class="borderRadius20 form-control"  placeholder="what`s the address ?">
                 </div>
                 <div class="form-group">
-                    <input required type="text" class="borderRadius20 form-control" name="people" placeholder="how many people do you need ?">
+                    <input required type="text" name="phone" class="borderRadius20 form-control"  placeholder="Enter contact phone number ?">
                 </div>
                 <div class="form-group">
                     <textarea required class="form-control" name="description" rows="3"  placeholder="describe what do you need"></textarea>
@@ -206,7 +206,7 @@
                     </span>
                 </h2>
                 <p><b>Emergency: </b><span id="reportId"></span></p>
-                <p><b>People: </b><span id="peopleId"></span></p>
+                <p><b>Phone: </b><span id="phoneId"></span></p>
                 <p><b>Address: </b><span id="addressId"></span></p>
                 <p><b>Descripion: </b><span id="descriptionId"></span></p>
         </div>

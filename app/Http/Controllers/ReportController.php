@@ -17,7 +17,7 @@ class ReportController extends Controller
 //            'location'  => json_encode($data['location']),
             'emergency' => $data['emergency'],
             'address'   => $data['address'],
-            'people'    => $data['people'],
+            'phone'    => $data['phone'],
             'description' => $data['description'],
             'lat' => $data['lat'],
             'lng' => $data['lng']
