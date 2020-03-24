@@ -146,7 +146,7 @@ $( "#reportForm" ).submit(function( event ) {
     // formData.location = { lat : Markerlocation.lat(), lng: Markerlocation.lng()};
     formData.lat =  Markerlocation.lat();
     formData.lng =  Markerlocation.lng();
-console.log(formData)
+
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -176,7 +176,7 @@ console.log(formData)
     $("#over_map").animate({
         marginRight: "0px"
     },500);
-    location.reload();
+    // location.reload();
 
 });
 
