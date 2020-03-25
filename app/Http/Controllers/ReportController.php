@@ -10,6 +10,10 @@ class ReportController extends Controller
     public function saveReport(Request $request)
     {
 //        return response()->json($request->all());
+        if($request->get('password') != 'giorgi.kakhiani13@gmail.com')
+        {
+            return response()->json(['message' => 'password error']);
+        }
 
         $data = $request->all();
 

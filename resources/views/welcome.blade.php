@@ -192,6 +192,9 @@
                     <input required type="text" name="phone" class="borderRadius20 form-control"  placeholder="Enter contact phone number ?">
                 </div>
                 <div class="form-group">
+                    <input required type="password" name="password" class="borderRadius20 form-control"  placeholder="Enter passcode">
+                </div>
+                <div class="form-group">
                     <textarea required class="form-control" name="description" rows="3"  placeholder="describe what do you need"></textarea>
                 </div>
                 <div class="form-group" style=" text-align:center;">
@@ -359,6 +362,7 @@
             formData.address = $("[name=address]").val();
             formData.phone = $("[name=phone]").val();
             formData.description = $("[name=description]").val();
+            formData.password = $("[name=password]").val();
             // formData.location = { lat : Markerlocation.lat(), lng: Markerlocation.lng()};
             formData.lat =  Markerlocation.lat();
             formData.lng =  Markerlocation.lng();
