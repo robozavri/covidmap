@@ -193,7 +193,11 @@
                 </div>
                 <div class="form-group">
                     <input required type="password" name="password" class="borderRadius20 form-control"  placeholder="Enter passcode">
-                    <p class="passcodeLabl">authorized personnel only</p>
+                    <p class="passcodeLabl" style="
+                        margin-left: 17px;
+                        color: #FF7777;
+                        font-size: 14px;
+                    ">authorized personnel only</p>
                 </div>
                 <div class="form-group">
                     <textarea required class="form-control" name="description" rows="3"  placeholder="describe what do you need"></textarea>
