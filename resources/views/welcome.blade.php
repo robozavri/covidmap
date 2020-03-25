@@ -398,6 +398,18 @@
                         return;
                     }
                     // console.log('server',data);
+
+                    $("[name=emergency]").val('');
+                    $("[name=address]").val('');
+                    $("[name=phone]").val('');
+                    $("[name=description]").val('');
+                    $("[name=password]").val('');
+                    // $("#over_map").hide('slow');
+                    // $("#over_map").remove();
+                    $("#over_map").animate({
+                        marginRight: "0px"
+                    },500);
+
                     tabIsVisible = false;
                     location.reload();
                 }
@@ -405,16 +417,7 @@
 
             // alert('successfully sent')
 
-            $("[name=emergency]").val('');
-            $("[name=address]").val('');
-            $("[name=phone]").val('');
-            $("[name=description]").val('');zzzz
-            // $("#over_map").hide('slow');
-            // $("#over_map").remove();
-            tabIsVisible = false;
-            $("#over_map").animate({
-                marginRight: "0px"
-            },500);
+
             // location.reload();
 
         });
