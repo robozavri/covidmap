@@ -9,10 +9,11 @@ class ReportController extends Controller
 {
     public function saveReport(Request $request)
     {
-//        return response()->json($request->all());
+
+        //        return response()->json($request->all());
         if($request->get('password') != 'giorgi.kakhiani13@gmail.com')
         {
-            return response()->json(['message' => 'password error']);
+            return response()->json(['message' => 'password error','status' => false]);
         }
 
         $data = $request->all();
@@ -26,7 +27,7 @@ class ReportController extends Controller
             'lat' => $data['lat'],
             'lng' => $data['lng']
         ]);
-        return response()->json(['message' => 'successfully submitted']);
+        return response()->json(['message' => 'successfully submitted','status' => true]);
     }
 
     public function get()

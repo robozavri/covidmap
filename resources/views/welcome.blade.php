@@ -193,6 +193,7 @@
                 </div>
                 <div class="form-group">
                     <input required type="password" name="password" class="borderRadius20 form-control"  placeholder="Enter passcode">
+                    <p class="passcodeLabl">authorized personnel only</p>
                 </div>
                 <div class="form-group">
                     <textarea required class="form-control" name="description" rows="3"  placeholder="describe what do you need"></textarea>
@@ -367,10 +368,7 @@
             formData.lat =  Markerlocation.lat();
             formData.lng =  Markerlocation.lng();
 
-            function serverResppnseData(data)
-            {
-                console.log('serverResppnseData:',data);
-            }
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -389,8 +387,13 @@
                     return data;
                 },
                 complete: function (data) {
-                    serverResppnseData(data);
-                    console.log('server',data);
+
+                    let res = JSON.parse(data.responseText);
+                    if(!res.status){
+                        console.log('error pass code');
+                        return;
+                    }
+                    // console.log('server',data);
                     tabIsVisible = false;
                     location.reload();
                 }
