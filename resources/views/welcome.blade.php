@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php // echo 'დროებით გათიშულია'; die; ?>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -11,6 +12,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 {{--        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>--}}
 {{--        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" >--}}
@@ -178,6 +182,27 @@
         </div>
     </nav>
 
+    <div id="mymodal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+{{--                    <h5 class="modal-title">Modal title</h5>--}}
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>საიტი მუშაობს საჩვენებელ რეჟიმში და განკუთვნილია მხოლოდ პრეზენტაციისთვის.
+                        განთავსებული ინფორმაცია ამჟამად არ არის მოწოდებული სამთავრობო დაწესებულებების მიერ და არ შეესაბამება სინამდვილეს.
+                        საიტის ამუშავება მოხდება მხოლოდ მთავრობისა და ეპიდემიოლოგების თანხმობითა და მათთან ახლოს მუშაობის შემთხვევაში.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">გავეცანი</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
         <div id="map"></div>
         <div id="over_map" class="shadowBottom">
             <form class="form" id="reportForm" action="/report" method="post">
@@ -225,6 +250,9 @@
 
 {{--    <script src="{{ asset('assets/js/script.js') }}"> </script>--}}
     <script>
+        // $('#mymodal').modal('show');
+        $('#mymodal').modal();
+
         let tabIsVisible = false;
         let map;
         let marker;
