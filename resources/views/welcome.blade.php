@@ -163,6 +163,9 @@
                 <li class="nav-item">
                     <a href="/hot-line" class="nav-link">Contact</a>
                 </li>
+                <li class="nav-item" >
+                    <span style="color: #FF7777;margin-left: 210px;" class="nav-link">საიტზე დადებული ინფორმაცია არის სატესტოდ და არ შეესაბამება სინამდვილეს.</span>
+                </li>
               {{--  <li class="nav-item">
                     <a class="nav-link" href="#">More official informacion</a>
                 </li> --}}
