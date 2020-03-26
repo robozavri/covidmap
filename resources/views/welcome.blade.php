@@ -248,8 +248,11 @@
 
 {{--    <script src="{{ asset('assets/js/script.js') }}"> </script>--}}
     <script>
-        // $('#mymodal').modal('show');
-        $('#mymodal').modal();
+
+        $('#mymodal').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
 
         let tabIsVisible = false;
         let map;
